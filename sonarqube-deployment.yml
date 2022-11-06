@@ -33,7 +33,7 @@ spec:
             - name: "SONARQUBE_JDBC_USERNAME"
               value: "postgres"
             - name: "SONARQUBE_JDBC_URL"
-              value: "jdbc:postgresql://postgresql-dev/sonar"
+              value: "jdbc:postgresql://postgresql-dev:5432/sonar"
             - name: "SONARQUBE_JDBC_PASSWORD"
               valueFrom:  
                 secretKeyRef:  
@@ -45,4 +45,4 @@ spec:
       volumes:
         - name: sonar-data
           persistentVolumeClaim:
-            claimName: efs-claim
+            claimName: sonar-pvc
